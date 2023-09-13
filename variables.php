@@ -17,6 +17,12 @@ $users = [
         'email' => 'laurene.castor@exemple.com',
         'age' => 28,
     ],
+    [
+        'full_name' => 'samy rve',
+        'email' => 'latinosamy726@gmail.com',
+        'age' => 28,
+        'password' => 'Samy',
+    ],
 ];
 
 $recipes = [

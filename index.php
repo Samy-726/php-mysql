@@ -19,7 +19,7 @@
 
     <!-- Inclusion des fichiers utilitaires -->
     <?php
-        include_once('mysql.php');
+        include_once('variables.php');
     ?>
 
     <!-- Inclusion du formulaire de connexion -->
@@ -42,6 +42,8 @@
         <!-- On affiche chaque recette une à une -->
         <?php foreach ($recipes as $recipe) : ?>
         <p><?php echo $recipe['author']; ?> </p>
+        <p><?php echo $recipe['title']; ?> </p>
+        <p><?php echo $recipe['recipe']; ?> </p>
         <?php endforeach; ?>
     <?php endif; ?>
     </div>

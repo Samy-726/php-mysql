@@ -34,10 +34,14 @@
         <!-- Si tout va bien, on peut continuer -->
         <?php
         // On récupère tout le contenu de la table recipes
-            $sqlQuery = 'SELECT * FROM recipes WHERE is_enabled = 1';
-            $recipesStatement = $db->prepare($sqlQuery);
-            $recipesStatement->execute();
-            $recipes = $recipesStatement->fetchAll();
+        $sqlQuery =
+        'SELECT * FROM recipes WHERE author = :author AND is_enabled = :is_enabled';
+        $recipesStatement = $db->prepare($sqlQuery);
+        $recipesStatement->execute([
+        'author' => 'mathieu.nebra@exemple.com',
+        'is_enabled' => true,
+        ]);
+        $recipes = $recipesStatement->fetchAll();
         ?>
         <!-- On affiche chaque recette une à une -->
         <?php foreach ($recipes as $recipe) : ?>
